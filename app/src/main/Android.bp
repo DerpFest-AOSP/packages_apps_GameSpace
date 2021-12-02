@@ -2,6 +2,8 @@ android_app {
     name: "GameSpace",
     platform_apis: true,
     privileged: true,
+    system_ext_specific: true,
+    manifest: "AndroidManifest.xml",
     certificate: "platform",
     resource_dirs: ["res"],
     defaults: [
@@ -27,4 +29,14 @@ android_app {
         "-Xuse-experimental=kotlin.Experimental",
         "-Xuse-experimental=kotlin.ExperimentalStdlibApi",
     ],
+
+    required: ["privapp_whitelist_io.chaldeaprjkt.gamespace.xml"],
+}
+
+prebuilt_etc_xml {
+    name: "privapp_whitelist_io.chaldeaprjkt.gamespace.xml",
+    src: "privapp_whitelist_io.chaldeaprjkt.gamespace.xml",
+    system_ext_specific: true,
+    filename_from_src: true,
+    sub_dir: "permissions",
 }
