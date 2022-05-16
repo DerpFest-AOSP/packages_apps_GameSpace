@@ -65,7 +65,7 @@
     <string name="per_app_angle_title">ANGLE verwenden (experimentell)</string>
     <string name="per_app_angle_summary">Verwenden des ANGLE-Renderers anstelle der nativen GLES-Treiber.\nWARNUNG!! Kann Spielgrafiken beschädigen, mit Vorsicht verwenden!</string>
     <string name="cant_find_angle_pkg">ANGLE ist auf Deinem System nicht verfügbar</string>
-
     <string name="per_app_unregister">%1$s aus der Bibliothek entfernen</string>
 
+    <string name="gamespace_menu_opacity_title">Transparenz des Overlay-Menüs</string>
 </resources>
