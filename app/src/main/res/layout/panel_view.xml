@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
-                android:fontFamily="@*android:string/config_lightFontFamily"
+                android:fontFamily="@*android:string/config_headlineFontFamily"
                 android:text="@string/settings_title"
                 android:textSize="21sp" />
 
