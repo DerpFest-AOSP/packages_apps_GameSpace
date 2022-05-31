@@ -44,6 +44,8 @@
     <string name="notifications_danmaku">Danmaku</string>
     <string name="stay_awake_title">Stay awake</string>
     <string name="stay_awake_summary">Keep screen awake while in the game</string>
+    <string name="lock_gesture_title">Lock gesture</string>
+    <string name="lock_gesture_summary">Lock gestures while in the game</string>
 
     <string name="ringer_mode_title">In-game ringer mode</string>
     <string-array name="ringer_mode_entries">

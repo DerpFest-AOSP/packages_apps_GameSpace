@@ -89,6 +89,12 @@
             android:summary="@string/stay_awake_summary"
             android:title="@string/stay_awake_title" />
 
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="gamespace_lock_gesture"
+            android:summary="@string/lock_gesture_summary"
+            android:title="@string/lock_gesture_title" />
+
         <org.derpfest.support.preferences.CustomSeekBarPreference
             android:key="gamespace_menu_opacity"
             android:title="@string/gamespace_menu_opacity_title"
