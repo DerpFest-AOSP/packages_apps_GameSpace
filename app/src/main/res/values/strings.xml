@@ -49,6 +49,7 @@
         <item>Silent</item>
         <item>Vibrate</item>
         <item>Normal</item>
+        <item>Do not change</item>
     </string-array>
 
     <string name="suppress_fullscreen_intent_title">Block fullscreen event</string>

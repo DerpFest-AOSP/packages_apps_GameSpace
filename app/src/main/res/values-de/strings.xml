@@ -49,6 +49,7 @@
         <item>Still</item>
         <item>Vibration</item>
         <item>Normal</item>
+        <item>Keine Änderung</item>
     </string-array>
 
     <string name="suppress_fullscreen_intent_title">Vollbild-Ereignisse blockieren</string>

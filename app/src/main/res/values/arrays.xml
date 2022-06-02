@@ -19,6 +19,7 @@
         <item>0</item> <!-- SILENT  -->
         <item>1</item> <!-- VIBRATE -->
         <item>2</item> <!-- NORMAL  -->
+        <item>3</item> <!-- NO CHANGE  -->
     </string-array>
 
     <string-array name="per_app_preferred_mode_values" translatable="false">

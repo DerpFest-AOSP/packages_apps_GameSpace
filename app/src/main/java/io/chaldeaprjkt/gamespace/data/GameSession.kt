@@ -69,7 +69,9 @@ class GameSession @Inject constructor(
         if (appSettings.noThreeScreenshot) {
             systemSettings.threeScreenshot = false
         }
-        audioManager.ringerModeInternal = appSettings.ringerMode
+        if (appSettings.ringerMode != 3) {
+            audioManager.ringerModeInternal = appSettings.ringerMode
+        }
     }
 
     fun unregister() {
@@ -83,7 +85,9 @@ class GameSession @Inject constructor(
         if (appSettings.noThreeScreenshot) {
             orig.threeScreenshot?.let { systemSettings.threeScreenshot = it }
         }
-        audioManager.ringerModeInternal = orig.ringerMode
+        if (appSettings.ringerMode != 3) {
+            audioManager.ringerModeInternal = orig.ringerMode
+        }
         state = null
     }
 
