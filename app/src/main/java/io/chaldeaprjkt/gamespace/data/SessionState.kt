@@ -22,7 +22,6 @@ import androidx.annotation.Keep
 data class SessionState(
     var packageName: String,
     var autoBrightness: Boolean? = null,
-    var headsUp: Boolean? = null,
     var threeScreenshot: Boolean? = null,
     var ringerMode: Int = AudioManager.RINGER_MODE_NORMAL,
 )

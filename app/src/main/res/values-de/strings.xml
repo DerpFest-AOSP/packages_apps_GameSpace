@@ -21,8 +21,6 @@
     <!-- Game options -->
     <string name="auto_brightness_disabled_title">Auto-Helligkeit deaktivieren</string>
     <string name="auto_brightness_disabled_summary">Die Helligkeit im Spiel beibehalten</string>
-    <string name="heads_up_disabled_title">Heads-up deaktivieren</string>
-    <string name="heads_up_disabled_summary">Deaktivieren der Benachrichtigungsvorschau im Spiel</string>
     <string name="in_game_preferences_title">In-Game-Optionen</string>
     <string name="three_screenshot_disabled_summary">Vorübergehende Deaktivierung der Screenshotgeste mit drei Fingern im Spiel</string>
     <string name="three_screenshot_disabled_title">Wischen für Bildschirmfoto deaktivieren</string>
@@ -38,7 +36,6 @@
         <item>Performance</item>
         <item>Akkuschonend</item>
     </string-array>
-    <string name="heads_up_title">Heads-up</string>
     <string name="fps_Info_title">FPS-Info</string>
     <string name="stay_awake_title">Bildschirm wach halten</string>
     <string name="stay_awake_summary">Bildschirm während des Spiels wach halten</string>

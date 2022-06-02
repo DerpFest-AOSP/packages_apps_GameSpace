@@ -41,11 +41,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getBoolean("show_fps", false)
         set(point) = db.edit().putBoolean("show_fps", point).apply()
 
-    var noHeadsUp
-        get() = db.getBoolean(KEY_HEADS_UP_DISABLE, true)
-        set(it) = db.edit().putBoolean(KEY_HEADS_UP_DISABLE, it).apply()
-
-
     var noAutoBrightness
         get() = db.getBoolean(KEY_AUTO_BRIGHTNESS_DISABLE, true)
         set(it) = db.edit().putBoolean(KEY_AUTO_BRIGHTNESS_DISABLE, it).apply()
@@ -67,7 +62,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         set(value) = db.edit().putInt(KEY_MENU_OPACITY, value).apply()
 
     companion object {
-        const val KEY_HEADS_UP_DISABLE = "gamespace_heads_up_disabled"
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
         const val KEY_STAY_AWAKE = "gamespace_stay_awake"

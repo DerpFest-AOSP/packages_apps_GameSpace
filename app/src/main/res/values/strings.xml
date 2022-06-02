@@ -21,8 +21,6 @@
     <!-- Game options -->
     <string name="auto_brightness_disabled_title">Disable auto-brightness</string>
     <string name="auto_brightness_disabled_summary">Keep brightness settled while in-game</string>
-    <string name="heads_up_disabled_title">Disable heads-up</string>
-    <string name="heads_up_disabled_summary">Disable Notification heads-up while in-game</string>
     <string name="in_game_preferences_title">In-game options</string>
     <string name="three_screenshot_disabled_summary">Temporary disable three-fingers-swipe screenshot gesture while in-game</string>
     <string name="three_screenshot_disabled_title">Disable swipe to screenshot</string>
@@ -38,7 +36,6 @@
         <item>Performance</item>
         <item>Battery</item>
     </string-array>
-    <string name="heads_up_title">Heads-up</string>
     <string name="fps_Info_title">FPS info</string>
     <string name="stay_awake_title">Stay awake</string>
     <string name="stay_awake_summary">Keep screen awake while in the game</string>
