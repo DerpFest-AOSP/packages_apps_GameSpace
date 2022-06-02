@@ -70,7 +70,7 @@
             android:title="@string/gamespace_menu_opacity_title"
             android:defaultValue="100"
             android:max="100"
-            app:min="0"
+            app:min="20"
             app:units="%" />
 
     </PreferenceCategory>
