@@ -72,4 +72,9 @@
     <string name="per_app_unregister">%1$s aus der Bibliothek entfernen</string>
 
     <string name="gamespace_menu_opacity_title">Transparenz des Overlay-Menüs</string>
+
+    <string name="in_game_notifications_title">Benachrichtigungsmodus</string>
+    <string name="in_game_notifications_hide">Nicht anzeigen</string>
+    <string name="in_game_notifications_headsup">Als Pop-up anzeigen</string>
+    <string name="in_game_notifications_reticker">Als reTicker anzeigen</string>
 </resources>
