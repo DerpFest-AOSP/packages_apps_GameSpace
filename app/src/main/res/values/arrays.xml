@@ -28,6 +28,18 @@
         <item>3</item> <!-- Battery     -->
     </string-array>
 
+    <string-array name="in_game_calls_entries" translatable="false">
+        <item>@string/in_game_calls_no_action</item>
+        <item>@string/in_game_calls_auto_answer</item>
+        <item>@string/in_game_calls_auto_reject</item>
+    </string-array>
+
+    <string-array name="in_game_calls_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="in_game_notifications_entries" translatable="false">
         <item>@string/in_game_notifications_hide</item>
         <item>@string/in_game_notifications_headsup</item>

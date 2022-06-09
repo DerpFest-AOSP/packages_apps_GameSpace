@@ -73,6 +73,10 @@
 
     <string name="gamespace_menu_opacity_title">Transparenz des Overlay-Menüs</string>
 
+    <string name="in_game_calls_title">Anruf im Spiel</string>
+    <string name="in_game_calls_no_action">Keine Aktion</string>
+    <string name="in_game_calls_auto_answer">Automatische Antwort</string>
+    <string name="in_game_calls_auto_reject">Auto-Abweisung</string>
     <string name="in_game_notifications_title">Benachrichtigungsmodus</string>
     <string name="in_game_notifications_hide">Nicht anzeigen</string>
     <string name="in_game_notifications_headsup">Als Pop-up anzeigen</string>
