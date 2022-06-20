@@ -77,6 +77,8 @@
     <string name="in_game_calls_no_action">No action</string>
     <string name="in_game_calls_auto_answer">Auto answer</string>
     <string name="in_game_calls_auto_reject">Auto reject</string>
+    <string name="in_game_calls_received_number">Received call from %1$s</string>
+    <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
     <string name="in_game_notifications_title">In-game notifications</string>
     <string name="in_game_notifications_hide">Do not show</string>
     <string name="in_game_notifications_headsup">Show as heads up</string>

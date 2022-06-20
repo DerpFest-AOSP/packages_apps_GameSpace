@@ -77,6 +77,8 @@
     <string name="in_game_calls_no_action">Keine Aktion</string>
     <string name="in_game_calls_auto_answer">Automatische Antwort</string>
     <string name="in_game_calls_auto_reject">Auto-Abweisung</string>
+    <string name="in_game_calls_received_number">Anruf von %1$s erhalten</string>
+    <string name="in_game_calls_rejected_number">Abgelehnter Anruf von %1$s</string>
     <string name="in_game_notifications_title">Benachrichtigungsmodus</string>
     <string name="in_game_notifications_hide">Nicht anzeigen</string>
     <string name="in_game_notifications_headsup">Als Pop-up anzeigen</string>
