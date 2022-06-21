@@ -37,6 +37,11 @@
         <item>Battery</item>
     </string-array>
     <string name="fps_Info_title">FPS info</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="notifications_hide">Hide</string>
+    <string name="notifications_headsup">Heads Up</string>
+    <string name="notifications_reticker">reTicker</string>
+    <string name="notifications_danmaku">Danmaku</string>
     <string name="stay_awake_title">Stay awake</string>
     <string name="stay_awake_summary">Keep screen awake while in the game</string>
 
@@ -81,6 +86,7 @@
     <string name="in_game_calls_rejected_number">Rejected call from %1$s</string>
     <string name="in_game_notifications_title">In-game notifications</string>
     <string name="in_game_notifications_hide">Do not show</string>
-    <string name="in_game_notifications_headsup">Show as heads up</string>
+    <string name="in_game_notifications_headsup">Show as Heads Up</string>
     <string name="in_game_notifications_reticker">Show as reTicker</string>
+    <string name="in_game_notifications_danmaku">Show as Danmaku</string>
 </resources>

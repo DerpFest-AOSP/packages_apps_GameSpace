@@ -67,13 +67,14 @@ class GameSession @Inject constructor(
         if (appSettings.noThreeScreenshot) {
             systemSettings.threeScreenshot = false
         }
-        if (appSettings.notificationsMode == 0) {
+        if (appSettings.notificationsMode == 0 || appSettings.notificationsMode == 3) {
             systemSettings.headsUp = false
             systemSettings.reTicker = false
         } else if (appSettings.notificationsMode == 1) {
             systemSettings.headsUp = true
             systemSettings.reTicker = false
         } else {
+            systemSettings.headsUp = true
             systemSettings.reTicker = true
         }
         if (appSettings.ringerMode != 3) {
@@ -89,9 +90,7 @@ class GameSession @Inject constructor(
         if (appSettings.noThreeScreenshot) {
             orig.threeScreenshot?.let { systemSettings.threeScreenshot = it }
         }
-        if (appSettings.notificationsMode != 2) {
-            orig.headsUp?.let { systemSettings.headsUp = it }
-        }
+        orig.headsUp?.let { systemSettings.headsUp = it }
         orig.reTicker?.let { systemSettings.reTicker = it }
         if (appSettings.ringerMode != 3) {
             audioManager.ringerModeInternal = orig.ringerMode

@@ -37,6 +37,11 @@
         <item>Akkuschonend</item>
     </string-array>
     <string name="fps_Info_title">FPS-Info</string>
+    <string name="notifications_title">Benachrichtigungen</string>
+    <string name="notifications_hide">Ausblenden</string>
+    <string name="notifications_headsup">Pop-up</string>
+    <string name="notifications_reticker">reTicker</string>
+    <string name="notifications_danmaku">Danmaku</string>
     <string name="stay_awake_title">Bildschirm wach halten</string>
     <string name="stay_awake_summary">Bildschirm während des Spiels wach halten</string>
 
@@ -83,4 +88,5 @@
     <string name="in_game_notifications_hide">Nicht anzeigen</string>
     <string name="in_game_notifications_headsup">Als Pop-up anzeigen</string>
     <string name="in_game_notifications_reticker">Als reTicker anzeigen</string>
+    <string name="in_game_notifications_danmaku">Als Danmaku anzeigen</string>
 </resources>
