@@ -41,12 +41,15 @@ class SystemSettings @Inject constructor(
 
     var island
         get() =
-            Settings.System.getInt(resolver, Settings.System.ISLAND_NOTIFICATION, 0) == 1
+            Settings.System.getIntForUser(
+                resolver, Settings.System.ISLAND_NOTIFICATION, 0,
+                UserHandle.USER_CURRENT) == 1
         set(it) {
-            Settings.System.putInt(
+            Settings.System.putIntForUser(
                 resolver,
                 Settings.System.ISLAND_NOTIFICATION,
-                it.toInt()
+                it.toInt(),
+                UserHandle.USER_CURRENT
             )
         }
 
