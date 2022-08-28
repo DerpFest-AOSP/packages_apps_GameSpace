@@ -54,7 +54,8 @@ class GameBroadcastReceiver : BroadcastReceiver() {
             ?.forEach {
                 (intent.clone() as Intent).apply {
                     setPackage(it)
-                    sendBroadcastAsUser(this, UserHandle.ALL)
+                    sendBroadcastAsUser(this, UserHandle.ALL,
+                        android.Manifest.permission.MANAGE_GAME_MODE)
                 }
             }
     }
@@ -64,4 +65,3 @@ class GameBroadcastReceiver : BroadcastReceiver() {
         const val GAME_STOP = "io.chaldeaprjkt.gamespace.action.GAME_STOP"
     }
 }
-
