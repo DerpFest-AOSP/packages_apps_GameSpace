@@ -44,11 +44,6 @@
     <string name="stay_awake_summary">Не отключать экран, пока вы в игре</string>
 
     <string name="ringer_mode_title">Режим звонка в игре</string>
-    <string-array name="ringer_mode_entries">
-        <item>Беззвучный</item>
-        <item>Вибрация</item>
-        <item>Нормальный</item>
-    </string-array>
 
     <string name="suppress_fullscreen_intent_title">Блокировать полноэкранные уведомления</string>
     <string name="suppress_fullscreen_intent_summary">Предотвращать появление полноэкранных уведомлений, таких как входящие вызовы, во время игры.</string>

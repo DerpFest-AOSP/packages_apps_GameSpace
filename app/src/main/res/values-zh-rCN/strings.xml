@@ -44,11 +44,6 @@
     <string name="stay_awake_summary">在游戏中保持亮屏</string>
 
     <string name="ringer_mode_title">游戏内铃声</string>
-    <string-array name="ringer_mode_entries">
-        <item>静音</item>
-        <item>振动</item>
-        <item>默认</item>
-    </string-array>
 
     <string name="suppress_fullscreen_intent_title">阻止全屏事件</string>
     <string name="suppress_fullscreen_intent_summary">防止游戏中出现诸如来电之类的全屏事件</string>
