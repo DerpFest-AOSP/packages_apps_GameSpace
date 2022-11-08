@@ -48,6 +48,7 @@
         <item>Diam</item>
         <item>Getar</item>
         <item>Normal</item>
+        <item>Jangan diubah</item>
     </string-array>
 
     <string name="suppress_fullscreen_intent_title">Blokir acara layar penuh</string>
