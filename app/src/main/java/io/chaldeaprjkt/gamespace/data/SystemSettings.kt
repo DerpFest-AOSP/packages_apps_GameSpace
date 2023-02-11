@@ -41,15 +41,12 @@ class SystemSettings @Inject constructor(
 
     var reTicker
         get() =
-            Settings.System.getIntForUser(
-                resolver, Settings.System.RETICKER_STATUS, 0,
-                UserHandle.USER_CURRENT) == 1
+            Settings.System.getInt(resolver, Settings.System.RETICKER_STATUS, 0) == 1
         set(it) {
-            Settings.System.putIntForUser(
+            Settings.System.putInt(
                 resolver,
                 Settings.System.RETICKER_STATUS,
-                it.toInt(),
-                UserHandle.USER_CURRENT
+                it.toInt()
             )
         }
 

@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2021 Chaldeaprjkt
- *               2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +54,7 @@ class GameBroadcastReceiver : BroadcastReceiver() {
             ?.forEach {
                 (intent.clone() as Intent).apply {
                     setPackage(it)
-                    sendBroadcastAsUser(this, UserHandle.CURRENT,
+                    sendBroadcastAsUser(this, UserHandle.ALL,
                         android.Manifest.permission.MANAGE_GAME_MODE)
                 }
             }
