@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright (C) Chaldeaprjkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+
+<resources>
+    <string name="settings_title">Modo Gamer</string>
+    <string name="settings_summary">Configure seus jogos com ferramentas úteis para melhorar a jogatina</string>
+    <string name="app_selector_label">Selecione seus jogos</string>
+    <string name="auto_brightness_disabled_title">Desativar o brilho automatico</string>
+    <string name="auto_brightness_disabled_summary">Manter o brilho selecionado no jogo</string>
+    <string name="heads_up_disabled_title">Desativar heads-up</string>
+    <string name="heads_up_disabled_summary">Desatviar as notificações heads-up durante o jogo</string>
+    <string name="game_list_title">Sua lista</string>
+    <string name="game_remove_message">Tem certeza que quer remover %1$s da sua lista ?</string>
+    <string name="app_search_title">Procurar</string>
+    <string name="three_screenshot_disabled_summary">Desabilitar temporariamente o gesto de 3 dedos para tirar um print da tela durante os jogos</string>
+    <string name="three_screenshot_disabled_title">Desabilitar o gesto de deslizar para tirar um print</string>
+    <string name="chaldea">chaldeaprjkt</string>
+    <string name="state_enabled">Ativado</string>
+    <string name="state_disabled">Desativado</string>
+    <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
+    <string name="game_mode_title">Mode</string>
+    <string-array name="game_mode_names">
+        <item>Não usar</item>
+        <item>Suave</item>
+        <item>Desempenho</item>
+        <item>Bateria</item>
+    </string-array>
+    <string name="heads_up_title">Heads-up</string>
+    <string name="fps_Info_title">Informação de FPS</string>
+    <string name="stay_awake_title">Permanicer ativo</string>
+    <string name="stay_awake_summary">O celular ficará com a tela ligada constantimente durante os jogos</string>
+
+    <string name="ringer_mode_title">Modo de som durante os jogos</string>
+    <string-array name="ringer_mode_entries">
+        <item>Silencioso</item>
+        <item>Vibrar</item>
+        <item>Normal</item>
+    </string-array>
+
+    <string name="suppress_fullscreen_intent_title">Bloquear notificações de tela cheia</string>
+    <string name="suppress_fullscreen_intent_summary">Bloquear coisas que tomem sua tela, como ligações</string>
+
+    <string name="per_app_title">Configurar o jogo</string>
+    <string name="per_app_mode_title">modo de jogo padrão para esse jogo</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Suave</item>
+        <item>Desempenho</item>
+        <item>Bateria</item>
+    </string-array>
+
+    <string name="per_app_angle_title">Usar modo ANGLE (AINDA EM TESTES)</string>
+    <string name="per_app_angle_summary">Usar o modo ANGLE para renderizar ao invés dos GLES drivers.\nATENÇÃo!! isso pode quebrar os graficos do jogo, use com cuidado!</string>
+    <string name="cant_find_angle_pkg">O modo ANGLE não estã disponível no seu sistema</string>
+
+    <string name="per_app_unregister">Remover %1$s da sua lista</string>
+
+</resources>
