@@ -48,6 +48,7 @@
         <item>Silencioso</item>
         <item>Vibrar</item>
         <item>Normal</item>
+        <item>Não mudar</item>
     </string-array>
 
     <string name="suppress_fullscreen_intent_title">Bloquear notificações de tela cheia</string>
