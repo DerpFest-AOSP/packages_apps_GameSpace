@@ -37,11 +37,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="6dp"
-                android:layout_marginTop="16dp"
                 android:letterSpacing="0.1"
                 android:text="@string/chaldea"
-                android:textSize="12sp"
-                android:textStyle="italic" />
+                android:textSize="8sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -49,7 +47,7 @@
                 android:layout_marginHorizontal="4dp"
                 android:fontFamily="@*android:string/config_lightFontFamily"
                 android:text="@string/settings_title"
-                android:textSize="32sp" />
+                android:textSize="21sp" />
 
             <include layout="@layout/tiles" />
 
