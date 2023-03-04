@@ -81,8 +81,8 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
         apps?.updateAppList()
     }
 
-    override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
-        when (preference?.key) {
+    override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
+        when (preference.key) {
             Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT -> {
                 settings.suppressFullscreenIntent = newValue as Boolean
                 return true
