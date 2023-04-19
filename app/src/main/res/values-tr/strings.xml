@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright (C) Chaldeaprjkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+
+<resources>
+    <string name="settings_title">Oyun Alanı</string>
+    <string name="settings_summary">Oyun ayarlarınızı yönetin</string>
+
+    <!-- Game options -->
+    <string name="auto_brightness_disabled_title">Otomatik parlaklık devre dışı</string>
+    <string name="auto_brightness_disabled_summary">Oyun içinde parlaklığı sabit tut</string>
+    <string name="in_game_preferences_title">Oyun içi seçenekleri</string>
+    <string name="three_screenshot_disabled_summary">Oyun içinde üç parmak hareketini geçici olarak devre dışı bırak</string>
+    <string name="three_screenshot_disabled_title">Üç parmak hareketini devre dışı bırak</string>
+    <string name="chaldea">chaldeaprjkt</string>
+    <string name="state_enabled">Etkin</string>
+    <string name="state_disabled">Devre dışı</string>
+
+    <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
+    <string name="game_mode_title">Mod</string>
+    <string-array name="game_mode_names">
+        <item>Desteklenmiyor</item>
+        <item>Standart</item>
+        <item>Performans</item>
+        <item>Pil tasarrufu</item>
+    </string-array>
+    <string name="fps_Info_title">FPS bilgisi</string>
+    <string name="notifications_title">Bildirimler</string>
+    <string name="notifications_hide">Gizle</string>
+    <string name="notifications_headsup">Bildirim penceresi</string>
+    <string name="notifications_reticker">reTicker</string>
+    <string name="notifications_danmaku">Danmaku</string>
+    <string name="stay_awake_title">Uyanık kal</string>
+    <string name="stay_awake_summary">Oyun içinde ekranı uyanık tut</string>
+
+    <string name="ringer_mode_title">Oyun içi zil sesi modu</string>
+    <string-array name="ringer_mode_entries">
+        <item>Sessiz</item>
+        <item>Titreşim</item>
+        <item>Normal</item>
+        <item>Değiştirme</item>
+    </string-array>
+
+    <string name="suppress_fullscreen_intent_title">Tam ekran etkinliğini engelle</string>
+    <string name="suppress_fullscreen_intent_summary">Oyun içinde gelen aramalar gibi tam ekran etkinliklerini engelle</string>
+
+    <!-- Game picker -->
+    <string name="game_list_title">Arşiv</string>
+    <string name="game_list_add_title">Ekle</string>
+    <string name="app_selector_label">Oyununu seç</string>
+    <string name="app_search_title">Ara</string>
+    <string name="game_remove_message">%1$s oyun listenizden kaldırmak istediğinizden emin misiniz?</string>
+
+    <!-- Configure game -->
+    <string name="per_app_title">Oyunu yapılandır</string>
+    <string name="per_app_mode_title">Tercih edilen mod</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Standart</item>
+        <item>Performans</item>
+        <item>Pil tasarrufu</item>
+    </string-array>
+    <string name="per_app_angle_title">ANGLE kullan (deneysel)</string>
+    <string name="per_app_angle_summary">Yerel GLES sürücüleri yerine ANGLE oluşturucu kullan.\nUYARI!! Oyun grafiklerini bozabilir, dikkatli kullanın!</string>
+    <string name="cant_find_angle_pkg">ANGLE sisteminizde mevcut değil</string>
+    <string name="per_app_unregister">%1$s arşivden kaldır</string>
+
+    <string name="gamespace_menu_opacity_title">Arayüz menüsü şeffaflığı</string>
+
+    <string name="in_game_calls_title">Araç modu</string>
+    <string name="in_game_calls_no_action">Eylem yok</string>
+    <string name="in_game_calls_auto_answer">Otomatik cevapla</string>
+    <string name="in_game_calls_auto_reject">Otomatik reddet</string>
+    <string name="in_game_calls_received_number">%1$s kullanıcısından gelen arama</string>
+    <string name="in_game_calls_rejected_number">%1$s kullanıcısından gelen arama</string>
+    <string name="in_game_notifications_title">Oyun içi bildirimler</string>
+    <string name="in_game_notifications_hide">Gösterme</string>
+    <string name="in_game_notifications_headsup">Bildirim penceresi olarak göster</string>
+    <string name="in_game_notifications_reticker">ReTicker olarak göster</string>
+    <string name="in_game_notifications_danmaku">Danmaku olarak göster</string>
+</resources>
