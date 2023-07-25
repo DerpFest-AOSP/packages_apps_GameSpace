@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright (C) Chaldeaprjkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+
+<resources>
+    <string name="settings_title">Χώρος παιχνιδιών</string>
+    <string name="settings_summary">Διαχειριστείτε τις ρυθμίσεις παιχνιδιών σας</string>
+
+    <!-- Game options -->
+    <string name="auto_brightness_disabled_title">Απενεργοποίηση αυτόματης φωτεινότητας</string>
+    <string name="auto_brightness_disabled_summary">Διατήρηση της ρυθμισμένης φωτεινότητας του παιχνιδιού</string>
+    <string name="in_game_preferences_title">Επιλογές εντός παιχνιδιού</string>
+    <string name="three_screenshot_disabled_summary">Προσωρινή απενεργοποίηση της χειρονομίας σάρωσης με τρία δάχτυλα, κατά τη διάρκεια του παιχνιδιού</string>
+    <string name="three_screenshot_disabled_title">Απενεργοποίηση σάρωσης για λήψη στιγμιότυπου οθόνης</string>
+    <string name="chaldea">Ελλάδα</string>
+    <string name="state_enabled">Ενεργοποιημένη</string>
+    <string name="state_disabled">Ανενεργή</string>
+
+    <!-- Game Mode Name - sorted by GameManager's enum, do not modify the sequence! -->
+    <string name="game_mode_title">Κατάσταση</string>
+    <string-array name="game_mode_names">
+        <item>Δεν υποστηρίζεται</item>
+        <item>Τυπική</item>
+        <item>Επιδόσεις</item>
+        <item>Μπαταρία</item>
+    </string-array>
+    <string name="fps_Info_title">Πληροφ. FPS</string>
+    <string name="notifications_title">Ειδοποιήσεις</string>
+    <string name="notifications_hide">Απόκρυψη</string>
+    <string name="notifications_headsup">Κεφαλίδες</string>
+    <string name="notifications_reticker">reTicker</string>
+    <string name="notifications_danmaku">Danmaku</string>
+    <string name="stay_awake_title">Μόνιμη ενεργ/ση</string>
+    <string name="stay_awake_summary">Κρατάει την οθόνη ξύπνια, όσο είσαι στο παιχνίδι</string>
+
+    <string name="ringer_mode_title">Λειτουργία κουδουνίσματος εντός παιχνιδιού</string>
+    <string-array name="ringer_mode_entries">
+        <item>Αθόρυβη</item>
+        <item>Δόνηση</item>
+        <item>Κανονική</item>
+        <item>Χωρίς αλλαγή</item>
+    </string-array>
+
+    <string name="suppress_fullscreen_intent_title">Συμβάν μπλοκαρίσματος, πλήρους οθόνης</string>
+    <string name="suppress_fullscreen_intent_summary">Αποτροπή εμφάνισης συμβάντων σε πλήρη οθόνη όπως οι εισερχόμενες κλήσεις, κατά τη διάρκεια του παιχνιδιού</string>
+
+    <!-- Game picker -->
+    <string name="game_list_title">Βιβλιοθήκη</string>
+    <string name="game_list_add_title">Προσθήκη</string>
+    <string name="app_selector_label">Επιλέξτε το παιχνίδι σας</string>
+    <string name="app_search_title">Αναζήτηση</string>
+    <string name="game_remove_message">Είστε βέβαιοι ότι θέλετε να καταργήσετε το %1$s από τη λίστα παιχνιδιών;</string>
+
+    <!-- Configure game -->
+    <string name="per_app_title">Διευθέτηση παιχνιδιού</string>
+    <string name="per_app_mode_title">Προτιμώμενη λειτουργία</string>
+    <string-array name="per_app_preferred_mode_entries">
+        <item>Τυπικό</item>
+        <item>Απόδοση</item>
+        <item>Μπαταρία</item>
+    </string-array>
+    <string name="per_app_angle_title">Χρήση ANGLE (πειραματικό)</string>
+    <string name="per_app_angle_summary">Χρήση της απόδοσης ANGLE αντί των εγγενών προγραμμάτων οδήγησης GLES, αν τη υποστηρίζει η συσκευή.\nΠΡΟΕΙΔΟΠΟΙΗΣΗ!! Μπορεί να σπάσει τα γραφικά του παιχνιδιού, χρήση με προσοχή!</string>
+    <string name="cant_find_angle_pkg">Το ANGLE δεν είναι διαθέσιμο στο σύστημά σας</string>
+    <string name="per_app_unregister">Κατάργηση του %1$s από τη βιβλιοθήκη</string>
+
+    <string name="gamespace_menu_opacity_title">Επίπεδο αδιαφάνειας, του μενού επικάλυψης</string>
+
+    <string name="in_game_calls_title">Κλήση εντός παιχνιδιού</string>
+    <string name="in_game_calls_no_action">Καμία ενέργεια</string>
+    <string name="in_game_calls_auto_answer">Αυτόματη απάντηση</string>
+    <string name="in_game_calls_auto_reject">Αυτόματη απόρριψη</string>
+    <string name="in_game_calls_received_number">Λήψη κλήσης από τον χρήστη %1$s</string>
+    <string name="in_game_calls_rejected_number">Απορριφθείσα κλήση από %1$s</string>
+    <string name="in_game_notifications_title">Ειδοποιήσεις εντός παιχνιδιού</string>
+    <string name="in_game_notifications_hide">Να μην εμφανίζονται</string>
+    <string name="in_game_notifications_headsup">Εμφάνιση ως κεφαλίδες</string>
+    <string name="in_game_notifications_reticker">Εμφάνιση ως reTicker</string>
+    <string name="in_game_notifications_danmaku">Εμφάνιση ως Danmaku</string>
+</resources>
