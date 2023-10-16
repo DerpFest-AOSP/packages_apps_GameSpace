@@ -24,6 +24,7 @@ import android.graphics.Point
 import android.os.Binder
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemProperties
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -177,6 +178,7 @@ class GameBarService : Hilt_GameBarService() {
 
     // for client service
     fun onGameStart() {
+        SystemProperties.set("sys.perf_profile", "1")
         rootBarView.isVisible = false
         rootBarView.alpha = 0f
         updateRootBarView()
@@ -184,6 +186,7 @@ class GameBarService : Hilt_GameBarService() {
     }
 
     fun onGameLeave() {
+        SystemProperties.set("sys.perf_profile", "0")
         if (::rootPanelView.isInitialized && rootPanelView.isAttachedToWindow) {
             wm.removeViewImmediate(rootPanelView)
         }
