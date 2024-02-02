@@ -43,7 +43,7 @@
     <string-array name="in_game_notifications_entries" translatable="false">
         <item>@string/in_game_notifications_hide</item>
         <item>@string/in_game_notifications_headsup</item>
-        <item>@string/in_game_notifications_reticker</item>
+        <item>@string/in_game_notifications_island</item>
         <item>@string/in_game_notifications_danmaku</item>
     </string-array>
 
