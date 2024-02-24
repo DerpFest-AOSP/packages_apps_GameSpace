@@ -20,7 +20,7 @@
 
     <!-- Game options -->
     <string name="auto_brightness_disabled_title">停用自動亮度</string>
-    <string name="auto_brightness_disabled_summary">在遊戲中鎖定自動亮度</string>
+    <string name="auto_brightness_disabled_summary">在遊戲中暫時停用自動調整亮度</string>
     <string name="in_game_preferences_title">遊戲中選項</string>
     <string name="three_screenshot_disabled_summary">在遊戲中暫時停用三指滑動截圖手勢</string>
     <string name="three_screenshot_disabled_title">停用滑動截圖手勢</string>
