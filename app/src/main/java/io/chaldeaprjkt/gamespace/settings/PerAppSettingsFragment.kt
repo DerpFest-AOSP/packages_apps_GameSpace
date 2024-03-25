@@ -23,7 +23,7 @@ import android.view.View
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.SwitchPreference
+import androidx.preference.SwitchPreferenceCompat
 import dagger.hilt.android.AndroidEntryPoint
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.GameConfig
@@ -72,7 +72,7 @@ class PerAppSettingsFragment : Hilt_PerAppSettingsFragment(),
             currentConfig?.mode?.let { value = it.toString() }
             onPreferenceChangeListener = this@PerAppSettingsFragment
         }
-        findPreference<SwitchPreference>(PREF_USE_ANGLE)?.apply {
+        findPreference<SwitchPreferenceCompat>(PREF_USE_ANGLE)?.apply {
             context.resources?.getBoolean(R.bool.config_allow_per_app_angle_usage)?.let {
                 isVisible = it
                 if (!it) return@apply
