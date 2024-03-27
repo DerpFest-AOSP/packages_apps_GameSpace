@@ -64,7 +64,7 @@ class DanmakuService @Inject constructor(
         isClickable = false
     }
 
-    private val windowManager: WindowManager = context.getSystemService(WindowManager::class.java)
+    private val windowManager: WindowManager = context.getSystemService(WindowManager::class.java)!!
 
     private val handler = Handler(Looper.getMainLooper())
 

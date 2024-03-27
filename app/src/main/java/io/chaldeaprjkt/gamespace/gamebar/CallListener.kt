@@ -47,9 +47,9 @@ class CallListener @Inject constructor(
     private val appSettings: AppSettings
 ) {
 
-    private val audioManager = context.getSystemService(AudioManager::class.java)
-    private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
-    private val telecomManager = context.getSystemService(TelecomManager::class.java)
+    private val audioManager = context.getSystemService(AudioManager::class.java)!!
+    private val telephonyManager = context.getSystemService(TelephonyManager::class.java)!!
+    private val telecomManager = context.getSystemService(TelecomManager::class.java)!!
 
     private val callsMode = appSettings.callsMode
 
@@ -118,7 +118,7 @@ class CallListener @Inject constructor(
 
     private fun isHeadsetPluggedIn(): Boolean {
         val audioDeviceInfoArr: Array<AudioDeviceInfo> =
-            audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+            audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)!!
         return audioDeviceInfoArr.any {
             it.type == AudioDeviceInfo.TYPE_WIRED_HEADPHONES ||
                     it.type == AudioDeviceInfo.TYPE_WIRED_HEADSET ||
@@ -126,4 +126,3 @@ class CallListener @Inject constructor(
         }
     }
 }
-
