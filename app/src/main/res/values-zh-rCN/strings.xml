@@ -40,7 +40,7 @@
     <string name="notifications_title">通知显示方式</string>
     <string name="notifications_hide">隐藏通知</string>
     <string name="notifications_headsup">顶部通知</string>
-    <string name="notifications_reticker">reTicker 通知</string>
+    <string name="notifications_island">灵动岛式通知</string>
     <string name="notifications_danmaku">弹幕通知</string>
     <string name="stay_awake_title">永不息屏</string>
     <string name="stay_awake_summary">在游戏中保持亮屏</string>
@@ -87,6 +87,6 @@
     <string name="in_game_notifications_title">游戏内通知</string>
     <string name="in_game_notifications_hide">不显示</string>
     <string name="in_game_notifications_headsup">显示为顶部通知</string>
-    <string name="in_game_notifications_reticker">显示为 reTicker 通知</string>
+    <string name="in_game_notifications_island">显示为灵动岛式通知</string>
     <string name="in_game_notifications_danmaku">显示为弹幕通知</string>
 </resources>
