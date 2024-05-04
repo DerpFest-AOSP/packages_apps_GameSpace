@@ -1,14 +1,15 @@
 package io.chaldeaprjkt.gamespace.widget
 
-import android.app.ActivityTaskManager
 import android.content.Context
 import android.hardware.display.DisplayManager
+import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
+import android.view.Display
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.view.Choreographer
-import android.view.Display
 import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.utils.di.ServiceViewEntryPoint
 import io.chaldeaprjkt.gamespace.utils.dp
@@ -30,7 +31,6 @@ class MenuSwitcher @JvmOverloads constructor(
 
     private val appSettings by lazy { context.entryPointOf<ServiceViewEntryPoint>().appSettings() }
     private val scope = CoroutineScope(Job() + Dispatchers.Main)
-    private val taskManager by lazy { ActivityTaskManager.getService() }
 
     private val choreographer = Choreographer.getInstance()
     private var lastFrameTimeNanos: Long = 0
@@ -38,16 +38,20 @@ class MenuSwitcher @JvmOverloads constructor(
     private var lastFPSTimeMillis = System.currentTimeMillis()
     private var fps = 0f
     private var maxRefreshRate: Float = 60f
+    private var previousFrameNS: Long = 0
+    private var currentFrameNS: Long = 0
+    private var droppedFrames: Int = 0
 
     private val frameCallback = object : Choreographer.FrameCallback {
         override fun doFrame(frameTimeNanos: Long) {
             if (lastFrameTimeNanos > 0) {
-                frameCount++
+                val droppedFrames = calculateDroppedFrames(lastFrameTimeNanos, frameTimeNanos, maxRefreshRate)
+                frameCount += 1 + droppedFrames
                 val currentTimeMillis = System.currentTimeMillis()
                 val timeDiffMillis = currentTimeMillis - lastFPSTimeMillis
                 if (timeDiffMillis >= 1000) {
                     fps = (frameCount * 1000f) / timeDiffMillis
-                    onFrameUpdated(fps)
+                    onFrameUpdated()
                     frameCount = 0
                     lastFPSTimeMillis = currentTimeMillis
                 }
@@ -56,6 +60,18 @@ class MenuSwitcher @JvmOverloads constructor(
             choreographer?.postFrameCallback(this)
         }
     }
+
+    private fun calculateDroppedFrames(previousFrameNS: Long, currentFrameNS: Long, refreshRate: Float): Int {
+        val frameTimeNS = 1_000_000_000 / refreshRate
+        val frameDurationNS = currentFrameNS - previousFrameNS
+        if (frameDurationNS < frameTimeNS) {
+            return 0
+        } else {
+            return (frameDurationNS.toFloat() / frameTimeNS).toInt() - 1
+        }
+    }
+
+    private val handler = Handler(Looper.getMainLooper())
 
     private val content: TextView?
         get() = findViewById(R.id.menu_content)
@@ -82,11 +98,11 @@ class MenuSwitcher @JvmOverloads constructor(
         updateFrameRateBinding()
     }
 
-    private fun onFrameUpdated(newValue: Float) = scope.launch {
-        val maxFPS = newValue.coerceAtMost(maxRefreshRate)
+    private fun onFrameUpdated() = scope.launch {
+        val maxFPS = fps.coerceAtMost(maxRefreshRate)
         DecimalFormat("#").apply {
             roundingMode = RoundingMode.HALF_EVEN
-            content?.text = this.format(maxFPS)
+            content?.text = format(maxFPS)
         }
     }
 
@@ -116,16 +132,13 @@ class MenuSwitcher @JvmOverloads constructor(
     }
 
     private fun registerFpsCallback() {
-        taskManager?.focusedRootTaskInfo?.taskId?.let {
-            maxRefreshRate = getMaxRefreshRate(context)
+        maxRefreshRate = getMaxRefreshRate(context)
+        choreographer.postFrameCallback(frameCallback)
+        lastFPSTimeMillis = System.currentTimeMillis()
+        handler.postDelayed({
+            choreographer.removeFrameCallback(frameCallback)
             choreographer.postFrameCallback(frameCallback)
-            lastFPSTimeMillis = System.currentTimeMillis()
-        }
-    }
-
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        updateFrameRateBinding()
+        }, 100L)
     }
 
     override fun onDetachedFromWindow() {
