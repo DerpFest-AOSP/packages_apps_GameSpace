@@ -33,6 +33,7 @@ import io.chaldeaprjkt.gamespace.data.GameSession
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.utils.GameModeUtils
 import io.chaldeaprjkt.gamespace.utils.ScreenUtils
+import io.chaldeaprjkt.gamespace.utils.isServiceRunning
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -89,7 +90,6 @@ class SessionService : Hilt_SessionService() {
         }
         gameManager = getSystemService(Context.GAME_SERVICE) as GameManager
         gameModeUtils.bind(gameManager)
-        isRunning = true
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -124,7 +124,6 @@ class SessionService : Hilt_SessionService() {
         session.unregister()
         gameModeUtils.unbind()
         screenUtils.unbind()
-        isRunning = false
         super.onDestroy()
     }
 
@@ -185,20 +184,18 @@ class SessionService : Hilt_SessionService() {
         const val START = "game_start"
         const val STOP = "game_stop"
         const val EXTRA_PACKAGE_NAME = "package_name"
-        var isRunning = false
-            private set
 
         fun start(context: Context, app: String?) = Intent(context, SessionService::class.java)
             .apply {
                 action = START
                 putExtra(EXTRA_PACKAGE_NAME, app)
             }
-            .takeIf { !isRunning }
+            .takeIf { !(context.isServiceRunning(SessionService::class.java)) }
             ?.run { context.startServiceAsUser(this, UserHandle.CURRENT) }
 
         fun stop(context: Context) = Intent(context, SessionService::class.java)
             .apply { action = STOP }
-            .takeIf { isRunning }
+            .takeIf { context.isServiceRunning(SessionService::class.java) }
             ?.run { context.stopServiceAsUser(this, UserHandle.CURRENT) }
     }
 }
