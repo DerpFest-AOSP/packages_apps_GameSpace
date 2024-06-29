@@ -12,10 +12,8 @@
         android:layout_gravity="center"
         android:drawableTop="@drawable/ic_arrow_left"
         android:minEms="3"
-        android:fontFamily="@*android:string/config_headlineFontFamilyMedium"
         android:textAlignment="center"
         android:textColor="@color/onBarBackground"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textSize="13sp" />
 
 </LinearLayout>
