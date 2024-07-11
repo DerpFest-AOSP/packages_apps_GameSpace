@@ -68,4 +68,18 @@
 
     <string name="per_app_unregister">Remover %1$s da sua lista</string>
 
+    <string name="gamespace_menu_opacity_title">Nível de opacidade do menu de sobreposição</string>
+
+    <string name="in_game_calls_title">Chamada no jogo</string>
+    <string name="in_game_calls_no_action">Nenhuma ação</string>
+    <string name="in_game_calls_auto_answer">Resposta automática</string>
+    <string name="in_game_calls_auto_reject">Rejeição automática</string>
+    <string name="in_game_calls_received_number">Chamada recebida de %1$s</string>
+    <string name="in_game_calls_rejected_number">Chamada rejeitada de %1$s</string>
+    <string name="in_game_notifications_title">Notificações no jogo</string>
+    <string name="in_game_notifications_hide">Não mostre</string>
+    <string name="in_game_notifications_headsup">Mostrar como aviso</string>
+    <string name="in_game_notifications_reticker">Mostrar como reTicker</string>
+    <string name="in_game_notifications_danmaku">Mostrar como Danmaku</string>
+
 </resources>
