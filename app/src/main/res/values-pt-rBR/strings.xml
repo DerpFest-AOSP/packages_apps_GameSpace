@@ -20,6 +20,7 @@
     <string name="app_selector_label">Selecione seus jogos</string>
     <string name="auto_brightness_disabled_title">Desativar o brilho automatico</string>
     <string name="auto_brightness_disabled_summary">Manter o brilho selecionado no jogo</string>
+    <string name="in_game_preferences_title">Opções no jogo</string>
     <string name="heads_up_disabled_title">Desativar heads-up</string>
     <string name="heads_up_disabled_summary">Desatviar as notificações heads-up durante o jogo</string>
     <string name="game_list_title">Sua lista</string>
@@ -67,5 +68,19 @@
     <string name="cant_find_angle_pkg">O modo ANGLE não estã disponível no seu sistema</string>
 
     <string name="per_app_unregister">Remover %1$s da sua lista</string>
+
+    <string name="gamespace_menu_opacity_title">Nível de opacidade do menu de sobreposição</string>
+
+    <string name="in_game_calls_title">Chamada no jogo</string>
+    <string name="in_game_calls_no_action">Nenhuma ação</string>
+    <string name="in_game_calls_auto_answer">Resposta automática</string>
+    <string name="in_game_calls_auto_reject">Rejeição automática</string>
+    <string name="in_game_calls_received_number">Chamada recebida de %1$s</string>
+    <string name="in_game_calls_rejected_number">Chamada rejeitada de %1$s</string>
+    <string name="in_game_notifications_title">Notificações no jogo</string>
+    <string name="in_game_notifications_hide">Não mostre</string>
+    <string name="in_game_notifications_headsup">Mostrar como aviso</string>
+    <string name="in_game_notifications_island">Mostrar como Island</string>
+    <string name="in_game_notifications_danmaku">Mostrar como Danmaku</string>
 
 </resources>
