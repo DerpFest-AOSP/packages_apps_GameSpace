@@ -89,4 +89,7 @@
     <string name="in_game_notifications_headsup">Show as Heads Up</string>
     <string name="in_game_notifications_island">Show as Island</string>
     <string name="in_game_notifications_danmaku">Show as Danmaku</string>
+
+    <string name="double_tap_to_sleep_title">Disable double tap to sleep</string>
+    <string name="double_tap_to_sleep_summary">Disable in-game statusbar double tap to sleep</string>
 </resources>

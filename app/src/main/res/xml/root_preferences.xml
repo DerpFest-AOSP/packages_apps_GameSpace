@@ -72,6 +72,12 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="false"
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_to_sleep_title"
+            android:summary="@string/double_tap_to_sleep_summary"/>
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
             android:key="gamespace_stay_awake"
             android:summary="@string/stay_awake_summary"
             android:title="@string/stay_awake_title" />

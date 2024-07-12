@@ -69,6 +69,10 @@ class AppSettings @Inject constructor(private val context: Context) {
         get() = db.getInt(KEY_MENU_OPACITY, 100)
         set(value) = db.edit().putInt(KEY_MENU_OPACITY, value).apply()
 
+    var doubleTaptoSleep
+        get() = db.getBoolean(KEY_DOUBLE_TAP_TO_SLEEP,false)
+        set(value) = db.edit().putBoolean(KEY_DOUBLE_TAP_TO_SLEEP,value).apply()
+
     companion object {
         const val KEY_AUTO_BRIGHTNESS_DISABLE = "gamespace_auto_brightness_disabled"
         const val KEY_3SCREENSHOT_DISABLE = "gamespace_tfgesture_disabled"
@@ -77,5 +81,6 @@ class AppSettings @Inject constructor(private val context: Context) {
         const val KEY_NOTIFICAITONS_MODE = "gamespace_notifications_mode"
         const val KEY_RINGER_MODE = "gamespace_ringer_mode"
         const val KEY_MENU_OPACITY = "gamespace_menu_opacity"
+        const val KEY_DOUBLE_TAP_TO_SLEEP = "double_tap_sleep_gesture"
     }
 }

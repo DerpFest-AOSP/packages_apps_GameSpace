@@ -26,4 +26,5 @@ data class SessionState(
     var headsUp: Boolean? = null,
     var island: Boolean? = null,
     var ringerMode: Int = AudioManager.RINGER_MODE_NORMAL,
+    var doubleTapToSleep: Boolean? = null,
 )
