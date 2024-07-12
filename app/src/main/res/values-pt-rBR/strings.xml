@@ -20,6 +20,7 @@
     <string name="app_selector_label">Selecione seus jogos</string>
     <string name="auto_brightness_disabled_title">Desativar o brilho automatico</string>
     <string name="auto_brightness_disabled_summary">Manter o brilho selecionado no jogo</string>
+    <string name="in_game_preferences_title">Opções no jogo</string>
     <string name="heads_up_disabled_title">Desativar heads-up</string>
     <string name="heads_up_disabled_summary">Desatviar as notificações heads-up durante o jogo</string>
     <string name="game_list_title">Sua lista</string>
