@@ -61,6 +61,7 @@ class GameSession @Inject constructor(
             island = systemSettings.island,
             ringerMode = audioManager.ringerModeInternal,
             doubleTapToSleep = systemSettings.doubleTapToSleep,
+            fastChargeDisabler = systemSettings.fastChargeDisabler as? Boolean
         )
         if (appSettings.noAutoBrightness) {
             systemSettings.autoBrightness = false
@@ -70,6 +71,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.doubleTaptoSleep){
            systemSettings.doubleTapToSleep = false
+        }
+        if (appSettings.fastChargeDisabler) {
+            systemSettings.fastChargeDisabler = false
         }
         if (appSettings.notificationsMode == 0 || appSettings.notificationsMode == 3) {
             systemSettings.headsUp = false
@@ -96,6 +100,9 @@ class GameSession @Inject constructor(
         }
         if (appSettings.doubleTaptoSleep) {
             orig.doubleTapToSleep?.let{ systemSettings.doubleTapToSleep = it }
+        }
+        if (appSettings.fastChargeDisabler) {
+            orig.fastChargeDisabler?.let { systemSettings.fastChargeDisabler = it }
         }
         orig.headsUp?.let { systemSettings.headsUp = it }
         orig.island?.let { systemSettings.island = it }

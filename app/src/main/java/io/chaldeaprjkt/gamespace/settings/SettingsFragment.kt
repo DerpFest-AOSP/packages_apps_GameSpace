@@ -18,6 +18,7 @@ package io.chaldeaprjkt.gamespace.settings
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.preference.Preference
@@ -25,15 +26,20 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
 import dagger.hilt.android.AndroidEntryPoint
 import io.chaldeaprjkt.gamespace.R
+import io.chaldeaprjkt.gamespace.data.AppSettings
 import io.chaldeaprjkt.gamespace.data.SystemSettings
 import io.chaldeaprjkt.gamespace.preferences.AppListPreferences
 import io.chaldeaprjkt.gamespace.preferences.appselector.AppSelectorActivity
 import javax.inject.Inject
 
+import vendor.lineage.fastcharge.V1_0.IFastCharge
+
 @AndroidEntryPoint(PreferenceFragmentCompat::class)
 class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeListener {
     @Inject
     lateinit var settings: SystemSettings
+
+    private val TAG = "GameSettingsFragment"
 
     private var apps: AppListPreferences? = null
 
@@ -50,6 +56,8 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
         ) {
             apps?.usePerAppResult(it)
         }
+
+    private var mFastCharge: IFastCharge? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
@@ -73,6 +81,18 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
         findPreference<SwitchPreferenceCompat>(Settings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT)?.apply {
             isChecked = settings.suppressFullscreenIntent
             onPreferenceChangeListener = this@SettingsFragment
+        }
+
+        findPreference<SwitchPreferenceCompat>(AppSettings.KEY_FAST_CHARGE_DISABLER)?.apply {
+            try {
+                context?.let {
+                    mFastCharge = IFastCharge.getService()
+                    isVisible = mFastCharge != null
+                }
+            } catch (e: Throwable) {
+                Log.e(TAG, "Failed to get IFastCharge service", e)
+                isVisible = false
+            }
         }
     }
 

@@ -66,6 +66,12 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="false"
+            android:key="fast_charge_disabler"
+            android:title="@string/fastcharge_disabled_summary"
+            android:summary="@string/fastcharge_disabled_title"/>
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
             android:key="gamespace_tfgesture_disabled"
             android:summary="@string/three_screenshot_disabled_summary"
             android:title="@string/three_screenshot_disabled_title" />
