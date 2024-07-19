@@ -25,15 +25,17 @@ import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.media.AudioSystem
 import android.telecom.TelecomManager
-import android.telephony.PhoneStateListener
+import android.telephony.TelephonyCallback
 import android.telephony.TelephonyManager
 import android.util.Log
-import android.widget.Toast
 
 import androidx.core.app.ActivityCompat
 
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ServiceScoped
+
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 import javax.inject.Inject
 
@@ -41,7 +43,6 @@ import io.chaldeaprjkt.gamespace.R
 import io.chaldeaprjkt.gamespace.data.AppSettings
 
 @ServiceScoped
-@Suppress("DEPRECATION")
 class CallListener @Inject constructor(
     @ApplicationContext private val context: Context,
     private val appSettings: AppSettings
@@ -53,21 +54,25 @@ class CallListener @Inject constructor(
 
     private val callsMode = appSettings.callsMode
 
-    private val phoneStateListener = Listener()
+    private val telephonyCallback = Callback()
+
+    private var executor: ExecutorService? = null
 
     private var callStatus: Int = TelephonyManager.CALL_STATE_OFFHOOK
 
     fun init() {
-        telephonyManager.listen(phoneStateListener, PhoneStateListener.LISTEN_CALL_STATE)
+        executor = Executors.newSingleThreadExecutor()
+        telephonyManager?.registerTelephonyCallback(executor!!, telephonyCallback)
     }
 
     fun destory() {
-        telephonyManager.listen(phoneStateListener, PhoneStateListener.LISTEN_NONE)
+        telephonyManager?.unregisterTelephonyCallback(telephonyCallback)
+        executor?.shutdownNow()
     }
 
     private fun isHeadsetPluggedIn(): Boolean {
         val audioDeviceInfoArr: Array<AudioDeviceInfo> =
-            audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+            audioManager?.getDevices(AudioManager.GET_DEVICES_OUTPUTS) ?: emptyArray()
         return audioDeviceInfoArr.any {
             it.type == AudioDeviceInfo.TYPE_WIRED_HEADPHONES ||
                     it.type == AudioDeviceInfo.TYPE_WIRED_HEADSET ||
@@ -87,55 +92,50 @@ class CallListener @Inject constructor(
         return true
     }
 
-    private inner class Listener : PhoneStateListener() {
+    private inner class Callback : TelephonyCallback(), TelephonyCallback.CallStateListener {
         private var previousState = TelephonyManager.CALL_STATE_IDLE
-        private var previousAudioMode = audioManager.mode
+        private var previousAudioMode = audioManager?.mode
 
-        override fun onCallStateChanged(state: Int, incomingNumber: String) {
+        override fun onCallStateChanged(state: Int) {
             if (callsMode == 0) return
             when (state) {
                 TelephonyManager.CALL_STATE_RINGING -> {
                     if (!checkPermission()) return
+                    @Suppress("DEPRECATION")
                     if (callsMode == 1) {
-                        telecomManager.acceptRingingCall()
-                        Toast.makeText(context, context.getString(
-                                R.string.in_game_calls_received_number, incomingNumber),
-                                Toast.LENGTH_SHORT).show()
+                        telecomManager?.acceptRingingCall()
                     } else {
-                        telecomManager.endCall()
-                        Toast.makeText(context, context.getString(
-                                R.string.in_game_calls_rejected_number, incomingNumber),
-                                Toast.LENGTH_SHORT).show()
+                        telecomManager?.endCall()
                     }
                 }
                 TelephonyManager.CALL_STATE_OFFHOOK -> {
                     if (callsMode == 2) return
                     if (previousState == TelephonyManager.CALL_STATE_RINGING) {
                         if (isHeadsetPluggedIn()) {
-                            audioManager.isSpeakerphoneOn = false
+                            audioManager?.isSpeakerphoneOn = false
                             AudioSystem.setForceUse(
                                 AudioSystem.FOR_COMMUNICATION,
                                 AudioSystem.FORCE_NONE
                             )
                         } else {
-                            audioManager.isSpeakerphoneOn = true
+                            audioManager?.isSpeakerphoneOn = true
                             AudioSystem.setForceUse(
                                 AudioSystem.FOR_COMMUNICATION,
                                 AudioSystem.FORCE_SPEAKER
                             )
                         }
-                        audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+                        audioManager?.mode = AudioManager.MODE_IN_COMMUNICATION
                     }
                 }
                 TelephonyManager.CALL_STATE_IDLE -> {
                     if (callsMode == 2) return
                     if (previousState == TelephonyManager.CALL_STATE_OFFHOOK) {
-                        audioManager.mode = previousAudioMode
+                        audioManager?.mode = previousAudioMode ?: AudioManager.MODE_NORMAL
                         AudioSystem.setForceUse(
                             AudioSystem.FOR_COMMUNICATION,
                             AudioSystem.FORCE_NONE
                         )
-                        audioManager.isSpeakerphoneOn = false
+                        audioManager?.isSpeakerphoneOn = false
                     }
                 }
             }
