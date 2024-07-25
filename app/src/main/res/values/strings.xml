@@ -93,4 +93,8 @@
 
     <string name="fastcharge_disabled_title">Disable Fast Charge</string>
     <string name="fastcharge_disabled_summary">Disable Fast Charge while in-game</string>
+    <string name="fast_charge_disabler_warning_title">Turn off Disable Fast Charge while gaming?</string>
+    <string name="fast_charge_disabler_warning_message">Playing with the device while plugged-in can damage the battery, but turning off fast charging can reduce this damage.\nDo you want to turn off disable fast charging while gaming?</string>
+    <string name="fast_charge_disabler_warning_confirm">Turn off anyway</string>
+    <string name="fast_charge_disabler_warning_cancel">Cancel</string>
 </resources>

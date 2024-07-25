@@ -21,6 +21,7 @@ import android.provider.Settings
 import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
@@ -84,6 +85,24 @@ class SettingsFragment : Hilt_SettingsFragment(), Preference.OnPreferenceChangeL
         }
 
         findPreference<SwitchPreferenceCompat>(AppSettings.KEY_FAST_CHARGE_DISABLER)?.apply {
+            setOnPreferenceChangeListener { preference, newValue ->
+                val isChecked = newValue as Boolean
+                if (!isChecked) {
+                    AlertDialog.Builder(context)
+                        .setTitle(R.string.fast_charge_disabler_warning_title)
+                        .setMessage(R.string.fast_charge_disabler_warning_message)
+                        .setIcon(R.drawable.ic_battery_alert)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.fast_charge_disabler_warning_confirm) { _, _ ->
+                            // do nothing
+                        }
+                        .setNegativeButton(R.string.fast_charge_disabler_warning_cancel) { _, _ ->
+                            (preference as SwitchPreferenceCompat).isChecked = true
+                        }
+                        .show()
+                }
+                true
+            }
             try {
                 context?.let {
                     mFastCharge = IFastCharge.getService()
