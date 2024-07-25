@@ -60,6 +60,7 @@
             android:title="@string/suppress_fullscreen_intent_title" />
 
         <SwitchPreferenceCompat
+            android:defaultValue="true"
             android:key="gamespace_auto_brightness_disabled"
             android:summary="@string/auto_brightness_disabled_summary"
             android:title="@string/auto_brightness_disabled_title" />
