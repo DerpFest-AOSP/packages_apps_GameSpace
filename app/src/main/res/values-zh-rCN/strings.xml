@@ -89,4 +89,14 @@
     <string name="in_game_notifications_headsup">显示为顶部通知</string>
     <string name="in_game_notifications_island">显示为灵动岛式通知</string>
     <string name="in_game_notifications_danmaku">显示为弹幕通知</string>
+
+    <string name="double_tap_to_sleep_title">禁用双击休眠</string>
+    <string name="double_tap_to_sleep_summary">禁止在游戏中双击状态栏进入休眠状态</string>
+
+    <string name="fastcharge_disabled_title">禁用快速充电</string>
+    <string name="fastcharge_disabled_summary">在游戏中禁用快速充电</string>
+    <string name="fast_charge_disabler_warning_title">是否在在游戏中禁用快速充电？</string>
+    <string name="fast_charge_disabler_warning_message">在充电时玩游戏可能会损坏电池，但关闭快速充电可以减少这种损害。\n您想在游戏时关闭禁用快速充电吗？</string>
+    <string name="fast_charge_disabler_warning_confirm">总是关闭</string>
+    <string name="fast_charge_disabler_warning_cancel">取消</string>
 </resources>
